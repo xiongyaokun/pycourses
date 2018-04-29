@@ -1,0 +1,35 @@
+REPL(Read-Eval-PrintLoop)
+
+IDLE
+Python's Integrated Development and Learning Environment
+安装：
+sudo apt-get install idle #python2
+sudo apt-get install idle3 #python3
+
+
+Python自带的Shell的问题
+1、不能再退出时保存历史记录以备未来查询
+2、不支持Tab自动补全
+3、不能快速获得模块/函数/类的信息，如参数、文档、原始代码
+4、不方便在交互环境下执行Shell命令
+
+ipython
+使用ipython有哪些好处？
+https://www.zhihu.com/question/51467397/answer/207341165
+
+1、获得对象信息：? ??
+2、调用系统Shell命令，只需要在命令前加 ! 即可
+3、Tab自动补全
+4、例是记录：%return %recall %macro %save _ __ ___ Ctrl-r Ctrl-n Ctrl-p
+5、很多magic函数 %lsmagic 获得全部可用的Magic函数
+   %debug 激活交互式调试器
+   %hist %history的别名,查看例是记录
+   %load 把外部代码加载进来
+   %rehashx 把$PATH中的可执行命令都更新进别名系统，这样就可以在Ipython中不加 ！而调用了
+   %timeit 获得程序执行时间，timeit是Python内置的库，用来测量小代码片的执行时间
+   %save 把某些历史记录保存到文件中
+   %logstart/logoff 记录会话，退出Python后还能回到之前的状态
+   %edit 使用编辑器打开，但需要设定EDITOR这个环境变量
+   %macro 把历史记录、文件等封装为宏，以便为了重新执行
+   storemagic 可以持久化宏、变量、别名
+   autoreload 可以让我们不退出IPython就动态修改代码，在执行代码前IPython会帮助自动重载改动的模块，这种思想在多种Web框架中都可见其踪影

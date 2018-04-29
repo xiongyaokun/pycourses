@@ -1,0 +1,14 @@
+Web开发
+1、web框架：Flask、Django、Tornado、Pyramid、aiohttp、sanic
+
+2、知名公司：豆瓣、Google、Youtube、Instagram、知乎、搜狐
+
+爬虫开发
+
+运维开发
+DEVOPS
+
+
+数据分析
+图形GUI开发（TKinter wxPython PyQt）
+游戏开发

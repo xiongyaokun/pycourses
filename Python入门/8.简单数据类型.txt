@@ -1,0 +1,32 @@
+字符串
+
+dir('对象') #查看对象的所有方法
+
+Decimal模块
+解决浮点数运算不精确的问题
+from decimal import Decimal
+Decimal('1.1') * Decimal('0.2')
+
+
+Python2的除法
+
+让分母或者分子成为浮点数
+
+from __future__ import division #使用新的除法特性
+
+
+数值-布尔值(bool)
+1、None #Null
+2、False
+3、0
+4、0.0
+5、'' #空字符串
+6、[] #空列表
+7、() #空元组
+8、{} #空字典
+
+
+延伸阅读
+1、https://www.python.org/dev/peps/pep-3101/
+2、https://www.python.org/dev/peps/pep-0498/
+3、https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
