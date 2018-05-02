@@ -1,0 +1,7 @@
+import keyword
+
+','.join(keyword.kwlist)
+
+
+—”…Ï‘ƒ∂¡
+https://wwww.programiz.com/python-programming/keyword-list

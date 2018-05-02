@@ -1,0 +1,40 @@
+字典
+
+>>>price_map = {'product1': 270}
+
+>>>product_map = {270: 'product1'}
+
+>>>d1['a']['c']
+>>>d1[('a','c')]
+#以上两者代表的意义是不一样的
+
+
+>>>d2 = dict(a=1) #d2 = {'a': 1}
+
+>>>d2.get('a')
+>>>d2.get('b')
+>>>d2.get('c', 2)
+
+
+删除
+>>>'a' in d2
+>>>del d2['a']
+
+
+字典顺序
+>>>from collections import OrderedDict #记忆字典元素插入的顺序，输出d3时也是安装元素插入的顺序输出
+>>>d3 = OrderedDict(a=1)
+>>>d3['b'] = 2
+>>>d3['c'] = 3
+
+
+获取键、值
+>>>d4 = dict(a=1, b=2)
+>>>d4.keys()
+>>>d4.values()
+>>>d4.items()
+
+
+延伸阅读
+https://docs.python.org/2/library/collections.html#collections.OrderedDict
+https://developers.google.com/edu/python/dict-files

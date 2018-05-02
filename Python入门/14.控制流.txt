@@ -1,0 +1,23 @@
+for 
+
+if 
+
+if-else
+
+if-elif-else
+
+while
+
+break
+
+continue
+
+for-else #for执行完成后，接着执行else
+for-break-else #如果for内的break执行了,跳出了for循环，那么else不执行;如果break不执行,那么else执行
+
+
+while-else #while执行完成后，接着执行else
+while-break-else #如果while内的break执行了,跳出了for循环，那么else不执行;如果break不执行,那么else执行
+
+
+try-except-else #如果except执行了，那么else不执行，如果except不执行，那么else执行

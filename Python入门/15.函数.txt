@@ -1,0 +1,88 @@
+程序分解的方法
+函数
+对象
+模块
+
+函数格式
+
+向函数传递参数
+
+形参：指函数在定义中在内部使用的参数，这是函数完成其工作所需的一项信息，在没实际调用的时候，函数用形参来指代
+实参：指调用函数时由调用者传入的参数，这个时候形参指代的内容就是实参了
+
+实参类型
+1、位置参数 positional argument
+2、关键字参数 keyword argument
+
+>>>def hello(*names):
+...    print(f'hello,{names}')
+...
+>>>hello('xyk') #hello,('xyk',)
+>>>hello('xyk','xiong') #hello,('xyk','xiong')
+
+强制关键字参数
+>>>def recv(maxsize, *, block):
+...    pass
+...
+>>>recv(1024,True) #TypeError
+>>>recv(1024, block=True)
+
+关键字参数
+>>>def hello(name='World'):
+...    print(f'Hello, {name}!)
+...
+
+
+**变长关键字参数
+>>>def run(a, b=1, **kwargs):
+...    print(kwargs)
+...
+>>>run(1) #{}
+>>>run(1, b=2) #{}
+>>>run(1, b=2, c=1) #{'c': 1}
+
+
+*args **kwargs
+>>>def run(a, b, c=1, *args, **kwargs):
+...    pass
+>>>run(1) #Error
+>>>run(1,2) #a=1,b=2
+>>>run(1,2,3) #a=1,b=2,c=3
+>>>run(1,2,3,4,5,d=6,e=7) #a=1,b=2,c=3,args=(4,5),kwargs={'d':6,'e':7}
+
+
+
+作用域
+
+B：build-in 系统变量
+G: global 全局变量
+L: local 本地作用域
+E: enclosing 嵌套作用域
+
+
+系统变量
+>>>import builtins
+>>>','.join(i for i in dir(builtins) if i.islower() and '_' not in i)
+
+
+
+闭包
+闭包指延伸了作用域的函数，其中包含函数定义体中引用，但不在函数内部的变量
+
+高阶函数
+map
+filter
+reduce
+
+匿名函数lambda
+>>>lambda x: x*2
+>>>lambda a,b: a+b
+>>>sorted(test, key=lambda x: x.rsplite('/').[2])
+
+常用函数zip
+
+
+延伸阅读
+https://www.learnpython.org/en/Functions
+http://book.pythontips.com/en/latest/map_filter.html
+https://docs.python.org/3/library/functools.html

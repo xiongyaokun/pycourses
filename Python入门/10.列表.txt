@@ -1,0 +1,57 @@
+数据结构
+
+列表[]
+
+>>>friends = []
+>>>friends.append('David') #每次只能添加一个
+>>>friends.extand(['Chris','Amy']) #一次添加多个
+
+列表分片
+
+>>>test = [0,1,2,3,4,5]
+>>>test[:] #复制
+>>>test[-1] #最后一位元素
+>>>test[::-1] #列表翻转
+
+
+列表删除元素
+>>>test = [0,1,2,3,4,5]
+
+>>>test.remove(2) #删除单个元素，删除首个符合条件的元素，按值删除
+>>>test.pop(2) #删除单个或者多个元素，按位删除，根据索引删除，pop删除时会返回被删除的元素
+>>>test.pop() #删除末尾的元素并返回末尾元素
+>>>del test[1] #直接删除指定索引的元素
+
+
+
+列表插入元素
+>>>test.append() #在末尾追加单个元素
+>>>test.extend() #用来连接list，同时在末尾追加多个元素
+>>>test.insert() #将单个元素插入到list中，一次只能插入一个元素
+
+
+搜索元素
+>>>test.index(6)
+>>>6 in test
+
+
+列表排序
+>>>sorted(test) #python内置的sorted方法，返回新的列表，不会修改原列表
+>>>test.sort() #列表的sort()方法，直接修改原列表
+
+reverse
+>>>reversed(test) #python内置的reversed方法，返回新数组，不会修改原数组
+>>>test.reverse() #列表的reverse()方法，直接修改原数组
+
+sorted和reverse联合使用
+>>>sorted(test,reverse=False)
+>>>sorted(test,reverse=True)
+
+
+查看某个对象的某个方法的使用
+>>>help(test.sort)
+
+
+延伸阅读
+https://developers.google.com/edu/python/lists
+https://developers.google.com/edu/python/sorting

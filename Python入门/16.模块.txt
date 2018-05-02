@@ -1,0 +1,40 @@
+模块
+第一次导入模块要做的三个步骤
+1、搜索并找到模块文件
+2、在必要时把模块文件编译成字节码
+3、执行模块的代码来创建所定义的对象
+
+
+导入模块
+import modulename
+from modulename import variablename
+
+from module import * #杜绝使用
+
+
+
+搜素路径顺序
+1、程序的主目录
+2、PYTHONPATH系统变量
+3、标准库目录
+4、.pah
+
+system.path
+
+
+搜索文件类型
+1、a.py代码源文件
+2、a.pyc字节码文件
+3、
+
+
+__name__ 和 __main__
+
+
+
+
+
+延伸阅读
+1、https://www.digitalocean.com/community/tutorials/how-to-write-modules-in-python-3
+2、https://docs.python.org/3/tutorial/modules.html
+
