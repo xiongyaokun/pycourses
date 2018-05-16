@@ -1,0 +1,92 @@
+条件运算符
+
+传统表达式：
+
+<表达式1> ? <表达式2> : <表达式3>
+
+>>>max = (a > b) ? a : b
+
+
+python中的条件表达式：
+value_when_true if condition else value_when_flase
+
+
+>>>'True' if True else 'False' # 'True'
+>>>'True' if False else 'False' # 'False'
+
+
+淘汰的用法,不建议使用
+>>>['False', 'True'] [True] #True
+>>>['False', 'True'] [False] #False
+
+
+and...or
+
+condition and value_when_true or value_when_false
+
+>>>'a' and 'b' # 'b'
+>>>False and 'b' # False
+
+>>>'a' and False and 'b' # False
+
+>>>'a' or 'b' # 'a'
+>>>False or 'b' # 'b'
+>>>'a' or False or 'b' # 'a'
+
+举例：
+>>>True and 1 or 0 # 1
+>>>False and 1 or 0 # 0
+
+
+下面这种情况条件运算错误
+>>>True and '' or 0 # 0
+>>>True and None or 0 # 0
+
+
+递归
+1、必定存在可使递归调用终止的条件，否则导致出现无限递归
+2、在每一次调用自己时，在某种意义上应该更接近于解
+
+
+举例：阶乘
+
+>>>def factorial(n):
+	if n == 1:
+		return 1
+	else:
+		return n * factorial(n-1)
+
+>>>def factorial(n):
+	return 1 if n == 1 else n * factorial(n-1)
+
+
+递归深度：
+>>>import sys
+>>>sys.getrecursionlimit() #默认是1000
+>>>sys.setrecursionlimit(1001) #更改递归深度
+
+
+
+推导(comprehensions)
+推导包含列表推导、字典推导和集合推导等，推导也叫作解析，如列表解析
+
+列表解析
+>>>[i * i for i in [1, 2, 3, 4]]
+
+
+带条件的解析
+>>>[i * i for i in [1, 2, 3, 4] if i % 2]
+
+>>>[i * i for i in range(10) if i % 2 and i % 3]
+
+
+集合解析
+>>>{i * i for i in [1, 2, 3, 4, 1]}
+
+
+字典解析
+>>>{k: v * v for k, v in [('a', 1), ('b', 2)]}
+
+
+延伸阅读
+http://python-3-patterns-idioms-test.readthedoc.io/en/latest/Comprehensions.html

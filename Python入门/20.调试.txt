@@ -1,0 +1,49 @@
+主流的调试方法：
+1、print
+2、pdb
+3、ipython
+4、IDE自带的调试方法
+
+
+
+pdb方法
+
+方法二：
+>>>import pdb
+>>>def div(a, b):
+	#运行到这里会自动暂停
+	pdb.set_trace()
+	return a / b
+>>>def main(a=1, b=0):
+	return div(a, b)
+
+>>>if __name__ == '__main__':
+	main()
+
+
+方法一：命令行下
+
+>>>python -m pdb err.py
+>>>help #显示可用的命令
+
+结束调试 q 
+
+
+
+ipython
+
+>>>ipython -i err.py --pdb --no-banner
+>>>ipdb
+
+
+
+调试经验总结
+
+调试只是开发时的手段，线上环境应该记录业务日志，也应该使用sentry搜集
+错误日志，通过这些错误日志去回溯问题，不应该出了问题线上调试
+
+
+延伸阅读
+1、https://docs.python.org/3/library/pdb.html
+2、https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger
+

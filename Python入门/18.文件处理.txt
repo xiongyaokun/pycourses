@@ -1,0 +1,80 @@
+文件名
+
+文件位置
+/home/dongwm/test.py
+
+打开文件
+1、读取文件内容，模式为'r'，表示读，这也是打开默认的模式
+2、如果要创建或者替换文件，模式为'w'，表示写
+3、为现有文件添加内容，模式为'a'，表示追加
+4、如果文件是二进制的，读写都要添加'b'
+
+模式可以组合，比如'rb'就表示读取二进制文件,更多的模式组合可以用dir看open函数
+的文档说明
+
+
+读文件
+>>>f = open('note.txt', 'r') #FileNotFoundError
+>>!echo 'a\nb\nc' > note.txt #表示给文件添加三行，分别是abc三个字母, 没有写对
+>>>f = open('note.txt', 'r') #正常打开
+
+读文件-方法
+>>>f.readlines() #['a\n', 'b\n', 'c\n'],一次性按行读取全部内容，并返回list
+>>>f.readlines() #[]
+
+>>>f.tell() #返回文件内指针的位置
+>>>f.seek(0) #是找到文件的指定位置，字符数
+>>>f.read(1) #指定每次读取的字符数
+
+
+写文件
+
+>>>cat note.txt #查看note.txt
+
+>>>f = open('note.txt', 'w')
+>>>f.write('d')
+>>>f.close() #关闭后才可以正常显示文件的更新内容
+
+写文件-追加模式
+
+>>>f = open('note.txt', 'a') #以追加模式打开文件
+>>>f.writelines('a\n', 'f') #一次性写入多行
+>>>f.close()
+
+
+with-文件上下文管理器
+
+>>>try:
+	f = open('note.txt', 'r')
+	print(f.read())
+   finally:
+	f.close()
+
+
+json/pickle存储python对象
+
+序列化——对象转成字符串
+反序列化——字符串转成对象
+
+>>>import json
+>>>import pickle
+>>>dct = {'a': [1,2,3], 'b': 100}
+>>>json_data = json.dumps(dct)
+>>>pickle_data = pickle.dumps(dct)
+
+
+
+可以把序列化的结果存进文件
+
+>>>with open('data.json', 'w') as f:
+	f.write(json_data)
+
+从文件还原对象
+
+>>>with open('data.json') as f:
+	data = json.loads(f.read())
+	print(data)
+
+延伸阅读
+
+http://dongweiming.github.io/Expert-Python/#23

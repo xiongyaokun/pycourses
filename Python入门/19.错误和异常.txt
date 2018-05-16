@@ -1,0 +1,70 @@
+错误和异常
+
+>>>try:
+	div(1,0)
+   except ZeroDivisionError:
+	print('Oops!')
+
+>>>lst = []
+>>>try:
+	lst[1]
+   except (IndexError, ValueError):
+	print('Oops!')
+
+
+多个except
+
+>>>try:
+	lst[1]
+   except IndexError:
+	print('index error')
+   except ValueError:
+	print('value error')
+
+
+try-except-else
+在try语句正常执行的时候，没有报错的情况下，执行else语句，否则，不执行else语句
+
+
+try-finally
+
+指无论如何都会执行finally内的语句
+
+
+不能捕获没有except的异常
+就是说，没有在except中声明的异常发生的话，程序也会报错
+
+
+非正常做法:
+使用except而不带任何异常的类型
+因为这种一刀切的方式会隐藏问题，应该指定异常的类型
+
+
+用户自定义异常
+
+>>>class NetworkError(Exception):
+	pass
+
+自定义异常继承自Exception
+
+>>>try:
+	raise NetworkError('network error')
+   except NetworkError:
+	print('Catch!')
+
+
+内置异常多以Error结尾，自定义异常建议：
+1、以Exception后缀表示可修复异常
+2、以Error后缀表示不可修复异常
+
+>>>class RequestException(Exception):
+	pass
+
+>>>class RequestError(Exception):
+	pass
+
+
+
+延伸阅读
+https://docs.python.org/3/tutorial/errors.html
+

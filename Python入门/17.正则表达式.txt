@@ -1,0 +1,103 @@
+正则表达式
+
+最简单的正则表达式
+
+>>>import re
+>>>re.match('test','test')
+>>>re.match('test','test123')
+>>>re.match('test','tes')
+
+match(pattern, string, flags=0) #re.match的函数签名,flags控制匹配方法
+
+match是从开头匹配，如果开头没有匹配，就没有了，match和$使用时，始终不能匹配，
+>>>re.match('123$', '123test345123') #返回None
+
+search是搜索整个文本
+
+>>>re.search('test', 'test123')
+>>>re.search('test', 'ltest')
+>>>te.match('test','ltest')
+
+search(pattern, string, flags=0) #函数flags的签名
+
+
+元字符metacharacters
+
+. 小圆点符号表示匹配除换行符以外的任意字符
+>>>re.search('..', 'hi')
+
+\w 匹配字母或数字下划线或汉字
+>>>re.search('\w\w\w\w', 'al_哈')
+
+\s 匹配任意的空白符，包括空格制表符、换页符等
+>>>re.search('\s\s\s'. ' \t\r')
+
+\d 匹配数字
+>>>re.search('\d\d', '12')
+
+\b 匹配单词的开始或结束
+>>>
+
+
+匹配内容
+>>>match = re.search('\s\s\s', ' \t\r')
+>>>match.group() #输出匹配内容
+
+元字符（二）
+^ 匹配字符串的开始
+$ 匹配字符串的结束
+
+>>>re.search('^test', 'test123')
+>>>re.search('^test', '123test123')
+>>>re.search('123$', 'test123')
+>>>re.search('123$', 'test123t')
+
+
+
+x|y #匹配x或y
+[xyz] #字符集合，匹配所包含的任意一个字符
+[a-z] #字符范围，匹配指定范围内的任意字符
+
+>>>re.search('a|e', 'abcd')
+>>>re.search('[a12]', 'abcd')
+>>>re.search('[a-z]', 'abc')
+>>>re.search('[d-z]', 'abc')
+
+
+
+重复
+？ 匹配前面的子表达式零次或1次
++  匹配前面的子表达式1次或多次
+*  匹配前面的子表达式零次或多次
+{n} 重复n次
+{n,} 重复n次或更多次
+{n,m} 重复n次或m次
+
+>>>re.search('\d{5}', '12345')
+>>>re.search('ca*t', 'cat')
+>>>re.search('ca*t', 'cart')
+>>>re.search('ca*t', 'caat')
+
+
+[^x] 匹配除了x以外的任意字符
+[^abc] 匹配除了abc几个字母以外的任意字符
+\W 匹配任意不是字母，数字，下划线，汉字的字符，等价于'[^A-Za-z0-9_]'
+\S 匹配任意不是空白符的字符，等价于[^ \f\n\r\t\v]
+\D 匹配任意非数字的字符 [^0-9]
+\B 匹配不是单词开头或结束的位置
+
+
+贪婪与懒惰
+
+懒惰限定符
+*? 重复任意次，但尽可能少重复
++? 重复一次或更多次，但尽可能少重复
+?? 重复一次或0次，但尽可能少重复
+{n,m}? 重复n到m次，但尽可能少重复
+{n,}? 重复n次以上，但尽可能少重复
+
+>>>re.search('a.*b', 'aabab') #aabab
+>>>re.search('a.*?b', 'aabab') #aab
+
+
+编译标志
